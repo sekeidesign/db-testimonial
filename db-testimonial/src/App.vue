@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="grid grid-cols-6 grid-rows-2">
+    <client-tile></client-tile>
+    <div class="bg-gray-200 relative col-start-3 col-span-2 row-start-1 row-span-2">
+      <div class="absolute">hello I am inside a square div</div>
+      <div class="pb-sq w-full"></div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import ClientTile from './components/ClientTile'
 
 export default {
   name: "App",
@@ -16,18 +19,7 @@ export default {
     }
   },
   components: {
-    HelloWorld
+    'client-tile': ClientTile,
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

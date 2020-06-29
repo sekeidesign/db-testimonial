@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    currentTile: 1,
     clients: [
       {
         logoURL: "~/src/assets/testimonial-logos/designit-vfl6xuIHt.svg",
