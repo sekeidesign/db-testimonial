@@ -7,10 +7,11 @@
         :logoURL="client.logoURL" 
         :brandColor="client.brandColor" 
         :currentTile="currentTile"
+        :clientId="client.id"
         @click="selectTile"
       ></client-tile>
       <div class="bg-gray-200 relative col-start-3 col-span-2 row-start-1 row-span-2">
-        <testimonial-tile v-for="client in clients" :key="client.id" v-show="currentTile === client.id" :logoURL="client.logoURL" :brandColor="client.brandColor" :currentTile="currentTile"></testimonial-tile>
+        <testimonial-tile v-for="client in clients" :key="client.id" v-show="currentTile === client.id" :logoURL="client.logoURL" :brandColor="client.brandColor" :clientQuote="client.quote" :quoteAuthor="client.author"></testimonial-tile>
         <div class="pb-square w-full"></div>
       </div>
     </div>
@@ -25,7 +26,7 @@ export default {
   name: "App",
   data: function () {
     return {
-      currentTile: 1,
+      currentTile: 6,
       clients: [
         {
           logoURL: require('./assets/testimonial-logos/designit-vfl6xuIHt.svg'),

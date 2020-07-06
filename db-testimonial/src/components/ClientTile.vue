@@ -23,9 +23,14 @@ export default {
       type: Number,
       required: true,
     },
-    key: {
+    clientId: {
       type: Number,
       required: true,
+    }
+  },
+  computed: {
+    isCurrentTile() {
+      return false;
     }
   },
   methods: {
