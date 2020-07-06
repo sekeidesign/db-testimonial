@@ -1,9 +1,16 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
-    padding: {
-      sq: '100%',
+    extend: {
+      width: {
+        logo: '150px',
+      },
+      height: {
+        logo: '75px',
+      },
+      padding: {
+        square: '100%',
+      },
     },
   },
   variants: {},
