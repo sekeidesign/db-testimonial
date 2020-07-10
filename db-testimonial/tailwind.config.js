@@ -7,6 +7,7 @@ module.exports = {
       },
       height: {
         logo: '75px',
+        bar: '5px',
       },
       padding: {
         square: '100%',
