@@ -1,5 +1,6 @@
 <template>
   <div class="absolute w-full h-full p-8 xl:p-16 flex flex-col justify-center">
+    <timer-bar></timer-bar>
     <img :src="logoURL" alt="Client Logo" class="w-logo h-logo object-contain">
     <div class="w-16 border-b border-gray-400 my-8"></div>
     <div>"{{ clientQuote }}"</div>
@@ -8,6 +9,8 @@
 </template>
 
 <script>
+import TimerBar from "./TimerBar"
+
 export default {
   props: {
     logoURL: {
@@ -27,5 +30,8 @@ export default {
       required: true,
     }
   },
+  components: {
+    'timer-bar': TimerBar,
+  }
 }
 </script>

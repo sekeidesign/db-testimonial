@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-full flex items-center bg-gray-900">
+  <div class="h-screen w-full flex items-center bg-gray-500">
     <div class="grid grid-cols-6 grid-rows-2 w-full">
       <logo-tile 
         v-for="client in clients" 
