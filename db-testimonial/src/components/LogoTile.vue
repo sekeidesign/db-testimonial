@@ -3,6 +3,7 @@
     class="grid-flow-row flex items-center justify-center cursor-pointer border-8 border-transparent border-opacity-50" 
     :class="{ 'border-white' : isCurrentTile }"
     :style="{ backgroundColor: '#' + brandColor }"
+    @click="select()"
     >
     <img :src="logoURL" class="block w-logo h-logo object-contain logo-invert"  alt="Client Logo">
   </div>
@@ -35,7 +36,7 @@ export default {
   },
   methods: {
     select() {
-      this.$emit('select')
+      this.$emit('select', this.clientId)
     }
   }
 }

@@ -8,7 +8,7 @@
         :brandColor="client.brandColor" 
         :currentTile="currentTile"
         :clientId="client.id"
-        @click="selectTile"
+        @select="setId"
       ></logo-tile>
       <div class="bg-gray-200 relative col-start-3 col-span-2 row-start-1 row-span-2">
         <testimonial-tile v-for="client in clients" :key="client.id" v-show="currentTile === client.id" :logoURL="client.logoURL" :brandColor="client.brandColor" :clientQuote="client.quote" :quoteAuthor="client.author"></testimonial-tile>
@@ -103,8 +103,8 @@ export default {
   computed: {
   },
   methods: {
-    selectTile(){
-      alert('clicked')
+    setId(id){
+      this.currentTile = id
     }
   },
   components: {
