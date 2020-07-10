@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen w-full flex items-center bg-gray-900">
     <div class="grid grid-cols-6 grid-rows-2 w-full">
-      <client-tile 
+      <logo-tile 
         v-for="client in clients" 
         :key="client.id" 
         :logoURL="client.logoURL" 
@@ -9,18 +9,20 @@
         :currentTile="currentTile"
         :clientId="client.id"
         @click="selectTile"
-      ></client-tile>
+      ></logo-tile>
       <div class="bg-gray-200 relative col-start-3 col-span-2 row-start-1 row-span-2">
         <testimonial-tile v-for="client in clients" :key="client.id" v-show="currentTile === client.id" :logoURL="client.logoURL" :brandColor="client.brandColor" :clientQuote="client.quote" :quoteAuthor="client.author"></testimonial-tile>
         <div class="pb-square w-full"></div>
       </div>
     </div>
+    <og-badge></og-badge>
   </div>
 </template>
 
 <script>
-import ClientTile from './components/ClientTile'
+import LogoTile from './components/LogoTile'
 import TestimonialTile from './components/TestimonialTile'
+import OGBadge from './components/OGBadge'
 
 export default {
   name: "App",
@@ -106,8 +108,9 @@ export default {
     }
   },
   components: {
-    'client-tile': ClientTile,
+    'logo-tile': LogoTile,
     'testimonial-tile': TestimonialTile,
+    'og-badge': OGBadge,
   }
 };
 </script>
