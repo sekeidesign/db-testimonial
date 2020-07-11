@@ -1,16 +1,24 @@
 <template>
-  <div 
-    class="grid-flow-row flex items-center justify-center cursor-pointer border-8 border-transparent border-opacity-50" 
-    :class="{ 'border-white' : isCurrentTile }"
-    :style="{ backgroundColor: '#' + brandColor }"
-    @click="select()"
-    >
-    <img :src="logoURL" class="block w-logo h-logo object-contain logo-invert"  alt="Client Logo">
-  </div>
+ <div class="relative grid-flow-row">
+    <div 
+      class="absolute w-full h-full flex items-center justify-center cursor-pointer border-tile border-transparent" 
+      :class="{ 'md:border-white md:border-opacity-50' : isCurrentTile }"
+      :style="{ backgroundColor: '#' + brandColor }"
+      @click="select()"
+      >
+      <img :src="logoURL" class="block w-logo h-logo object-contain logo-invert"  alt="Client Logo">
+    </div>
+    <div class="pb-square w-full"></div>
+ </div>
 </template>
 
 <script>
 export default {
+  computed: {
+    isCurrentTile: function () {
+      return this.currentTile === this.clientId
+    }
+  },
   props: {
     logoURL: {
       type: String,
@@ -29,15 +37,10 @@ export default {
       required: true,
     }
   },
-  computed: {
-    isCurrentTile() {
-      return false;
-    }
-  },
   methods: {
     select() {
       this.$emit('select', this.clientId)
-    }
+    },
   }
 }
 </script>

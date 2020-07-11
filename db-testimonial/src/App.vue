@@ -1,16 +1,16 @@
 <template>
-  <div class="h-screen w-full flex items-center bg-gray-500">
-    <div class="grid grid-cols-6 grid-rows-2 w-full">
-      <logo-tile 
-        v-for="client in clients" 
-        :key="client.id" 
-        :logoURL="client.logoURL" 
-        :brandColor="client.brandColor" 
-        :currentTile="currentTile"
-        :clientId="client.id"
-        @select="setId"
-      ></logo-tile>
-      <div class="bg-gray-200 relative col-start-3 col-span-2 row-start-1 row-span-2">
+  <div class="min-h-screen w-full flex items-center bg-gray-700">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 grid-rows-3 lg:grid-rows-2 w-full">
+        <logo-tile 
+          v-for="client in clients" 
+          :key="client.id" 
+          :logoURL="client.logoURL" 
+          :brandColor="client.brandColor" 
+          :currentTile="currentTile"
+          :clientId="client.id"
+          @select="setId"
+        ></logo-tile>
+      <div class="bg-gray-200 hidden md:block relative col-start-2 lg:col-start-3 col-span-2 row-start-1 row-span-2">
         <testimonial-tile v-for="client in clients" :key="client.id" v-show="currentTile === client.id" :logoURL="client.logoURL" :brandColor="client.brandColor" :clientQuote="client.quote" :quoteAuthor="client.author"></testimonial-tile>
         <div class="pb-square w-full"></div>
       </div>
@@ -28,7 +28,7 @@ export default {
   name: "App",
   data: function () {
     return {
-      currentTile: 6,
+      currentTile: 1,
       clients: [
         {
           logoURL: require('./assets/testimonial-logos/designit-vfl6xuIHt.svg'),
